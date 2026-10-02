@@ -46,6 +46,16 @@ npm install <dsh-system-proxy 源码目录的绝对路径>
 # 将 "dsh-system-proxy" 加入 package.json 的 dsh.profile.bundles
 ```
 
+Linux 桌面版的 `desktop` profile 由 Electron 独占，不能通过 CLI 的 `dsh plugin --profile desktop add` 管理。源码安装示例：
+
+```sh
+cd \"${DSH_HOME:-$HOME/.dsh}/profiles/desktop\"
+npm install /absolute/path/to/dsh-system-proxy
+# 在本目录 package.json 的 dsh.profile.bundles 中加入 \"dsh-system-proxy\"
+```
+
+然后从托盘真正退出桌面版再启动；仅关闭窗口会隐藏应用，不会重新加载 Host。
+
 发布后可使用：
 
 ```powershell
